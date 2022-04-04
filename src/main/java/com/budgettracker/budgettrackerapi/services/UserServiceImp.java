@@ -24,7 +24,7 @@ public class UserServiceImp implements UserService{
 
     @Override
     public User registerUser(String firstName, String lastName, String email, String password) throws EtAuthException {
-        Pattern pattern = Pattern.compile("^(.+)@(.+)$", Pattern.CASE_INSENSITIVE);
+        Pattern pattern = Pattern.compile("^(.+)@(.+)$");
         if(pattern.matcher(email).matches()) {
             throw new EtAuthException("Invalid email format");
         }
